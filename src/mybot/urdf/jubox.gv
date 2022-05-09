@@ -1,0 +1,41 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"base2_link" [label="base2_link"];
+"camera" [label="camera"];
+"support" [label="support"];
+"laser" [label="laser"];
+"left_back_link" [label="left_back_link"];
+"left_back_link2" [label="left_back_link2"];
+"left_front_link" [label="left_front_link"];
+"left_front_link2" [label="left_front_link2"];
+"right_back_link" [label="right_back_link"];
+"right_back_link2" [label="right_back_link2"];
+"right_front_link" [label="right_front_link"];
+"right_front_link2" [label="right_front_link2"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base2_joint" [label="xyz: 0 0 0.27 \nrpy: 0 -0 0"]
+"base2_joint" -> "base2_link"
+"base2_link" -> "camera_joint" [label="xyz: 0.285 0 0.06 \nrpy: 0 -0 0"]
+"camera_joint" -> "camera"
+"base2_link" -> "support2base_link" [label="xyz: 0 0 0.115 \nrpy: 0 -0 0"]
+"support2base_link" -> "support"
+"support" -> "laser_joint" [label="xyz: 0 0 0.06 \nrpy: 0 -0 0"]
+"laser_joint" -> "laser"
+"base_link" -> "left_back_joint" [label="xyz: -0.2 0.298 0.07 \nrpy: 1.5708 -0 0"]
+"left_back_joint" -> "left_back_link"
+"base_link" -> "left_back_joint2" [label="xyz: -0.3 0.24 0.22 \nrpy: 1.5708 -0 0"]
+"left_back_joint2" -> "left_back_link2"
+"base_link" -> "left_front_joint" [label="xyz: 0.2 0.298 0.07 \nrpy: 1.5708 -0 0"]
+"left_front_joint" -> "left_front_link"
+"base_link" -> "left_front_joint2" [label="xyz: 0.3 0.24 0.22 \nrpy: 1.5708 -0 0"]
+"left_front_joint2" -> "left_front_link2"
+"base_link" -> "right_back_joint" [label="xyz: -0.2 -0.298 0.07 \nrpy: 1.5708 -0 0"]
+"right_back_joint" -> "right_back_link"
+"base_link" -> "right_back_joint2" [label="xyz: -0.3 -0.24 0.22 \nrpy: 1.5708 -0 0"]
+"right_back_joint2" -> "right_back_link2"
+"base_link" -> "right_front_joint" [label="xyz: 0.2 -0.298 0.07 \nrpy: 1.5708 -0 0"]
+"right_front_joint" -> "right_front_link"
+"base_link" -> "right_front_joint2" [label="xyz: 0.3 -0.24 0.22 \nrpy: 1.5708 -0 0"]
+"right_front_joint2" -> "right_front_link2"
+}

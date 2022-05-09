@@ -1,0 +1,16 @@
+<launch>
+   
+    <include file="$(find nav_demo)/launch/map_sever.launch"/>
+    <include file="$(find nav_demo)/launch/nav02_amcl.launch"/>
+
+    <!-- 运行move_base节点 -->
+    <include file="$(find nav_demo)/launch/move_base.launch" />
+    <!-- 运行rviz -->
+
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" />
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+
+    <node pkg="rviz" type="rviz" name="rviz"  />
+ 
+
+</launch>

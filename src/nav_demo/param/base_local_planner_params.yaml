@@ -1,0 +1,24 @@
+TrajectoryPlannerROS:
+
+
+  max_vel_x: 0.8 #(x 方向最大速度)
+  min_vel_x: 0.05 # (X 方向最小速速)
+
+  max_vel_theta:  2.0 # (角速度)
+  min_vel_theta: -2.0
+  min_in_place_vel_theta: 1.0 #(自转速度)
+
+  acc_lim_x: 1.0 # (X 加速限制)
+  acc_lim_y: 0.0 # (Y 加速限制)
+  acc_lim_theta: 1  #( 角速度加速限制)
+
+  xy_goal_tolerance: 0.10 #(允许机器人所到目标的坐标偏差)
+  yaw_goal_tolerance: 0.025 #(允许机器人缩到目标的方向（弧度）偏差，该值设置小可能导致机器人接近目标振荡)
+
+  holonomic_robot: false
+
+# Forward Simulation Parameters，前进模拟参数
+  sim_time: 2.5 #(模拟轨迹的时间)
+  vx_samples: 18 #(x方向速度的样本数)
+  vtheta_samples: 20 #(y方向速度的样本数)
+  sim_granularity: 0.05 #(给定轨迹的步长)

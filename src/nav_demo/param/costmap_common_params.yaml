@@ -1,0 +1,17 @@
+
+robot_radius: 0.12 
+
+
+obstacle_range: 3.0 # 用于障碍物探测
+raytrace_range: 3.5 # 用于清除障碍物
+
+inflation_radius: 0.5 #膨胀半径，扩展在碰撞区域以外的代价区域，使得机器人规划路径避开障碍物
+
+cost_scaling_factor: 3.0 #代价比例系数(exp(-1.0 * cost_scaling_factor * (distance_from_obstacle - inscribed_radius)) * (costmap_2d::INSCRIBED_INFLATED_OBSTACLE - 1))
+
+#地图类型
+map_type: costmap
+
+observation_sources: scan #导航包所需要的传感器
+
+scan: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true} #对传感器的坐标系和数据进行配置。这个也会用于代价地图添加和清除障碍物
